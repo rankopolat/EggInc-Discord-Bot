@@ -1,0 +1,2 @@
+# EggInc Discord Bot
+ 
