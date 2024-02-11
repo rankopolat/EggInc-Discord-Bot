@@ -1,4 +1,4 @@
 ei-bot/.env
 
 #sqllite3
-*.db
+ei-bot/ei-db/*.db
