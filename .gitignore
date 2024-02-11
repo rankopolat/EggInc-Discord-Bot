@@ -1,0 +1,4 @@
+python/.env
+
+#sqllite3
+*.db
