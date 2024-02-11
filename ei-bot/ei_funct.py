@@ -85,7 +85,27 @@ def create_table(db):
         username text NOT NULL,
         soul_eggs REAL NOT NULL,
         proph_eggs INTEGER NOT NULL,
-        earning_bonus REAL NOT NULL
+        earning_bonus REAL NOT NULL,
+        ei_ign text NOT NULL
         )
     ''')
+
+
+    #data = cur.execute("SELECT * FROM kappaINFO")
+
+
+    ### Left For Updates or ALTERNATION within the table without losing data
+    '''for row in data:
+        
+        pr = periodical_Requests(row[1])
+
+        db.execute("UPDATE kappaINFO SET ei_ign=? WHERE username=?", (pr.backup.user_name, row[2]))
+        print(pr.backup.user_name)
+
+    print()
+    for row in data:
+        print(row)'''
+
     db.commit()
+
+
