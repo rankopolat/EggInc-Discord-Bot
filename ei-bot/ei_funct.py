@@ -1,4 +1,7 @@
-
+#ei imports
+import requests
+import ei_pb2
+import base64
 
 def numer_formatter(number):
 
@@ -26,3 +29,18 @@ def numer_formatter(number):
             return f"{number / divisor:,.3f}{suffix}"
     
     return str(number)
+
+def peiodical_Requests(user_id):
+
+    periodicals_request = ei_pb2.EggIncFirstContactRequest()
+    periodicals_request.ei_user_id = user_id
+    periodicals_request.client_version = 42
+
+    url = 'https://www.auxbrain.com/ei/bot_first_contact' 
+    data = { 'data' : base64.b64encode(periodicals_request.SerializeToString()).decode('utf-8') }
+    response = requests.post(url, data = data)
+
+    periodicals_response = ei_pb2.EggIncFirstContactResponse()
+    periodicals_response.ParseFromString(base64.b64decode(response.text))
+
+    return periodicals_response
