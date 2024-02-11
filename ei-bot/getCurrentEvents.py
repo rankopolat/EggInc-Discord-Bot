@@ -2,10 +2,8 @@ import requests
 import ei_pb2
 import base64
 
-user_id = 'EI4579467126636544'
-
 periodicals_request = ei_pb2.EggIncFirstContactRequest()
-periodicals_request.ei_user_id = user_id
+#periodicals_request.ei_user_id = user_id
 periodicals_request.client_version = 42
 
 url = 'https://www.auxbrain.com/ei/bot_first_contact' 

@@ -14,6 +14,8 @@ user_id = os.getenv('USER_ID')
 bot = commands.Bot(command_prefix='!', intents = discord.Intents.all())
 db = sqlite3.connect('kappa.db')
 
+
+
 @bot.event
 async def on_ready():
     print(f'{bot.user} has connected to Discord!')
