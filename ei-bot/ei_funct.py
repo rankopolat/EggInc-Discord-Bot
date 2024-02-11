@@ -1,17 +1,25 @@
+#==================================================================#
+############### Bot Created By: Taijitu (rankopolat) ###############
+### Repository: https://github.com/rankopolat/EggInc-Discord-Bot ###
+#==================================================================#
+
 #ei imports
 import requests
 import ei_pb2
 import base64
 
 
+## Creating Globals to Access through folder
 global old,new,se,pe,eb
-
 old = ":regional_indicator_o: :regional_indicator_l: :regional_indicator_d:" 
 new = ":regional_indicator_n: :regional_indicator_e: :regional_indicator_w:"  
 se = ":purple_circle:"
 pe = ":yellow_circle:"
 eb = ":chart_with_upwards_trend:"
 
+
+
+### For earning bonus and soul egg ease of reading
 def numer_formatter(number):
 
     format_souls_eggs = '{:_.0f}'.format(number)
@@ -42,7 +50,7 @@ def numer_formatter(number):
 
 
 
-
+### Periodical Requests accessing url:bot_first_contract
 def periodical_Requests(user_id):
 
     periodicals_request = ei_pb2.EggIncFirstContactRequest()
@@ -61,12 +69,17 @@ def periodical_Requests(user_id):
 
 
 
+
+### Maths To calculate Earnings bonus
 def calc_earning_bonus(periodicals_response):
 
     prophecy_bonus = periodicals_response.backup.game.epic_research[21].level
     soul_bonus = periodicals_response.backup.game.epic_research[15].level
     new_proph = periodicals_response.backup.game.eggs_of_prophecy
     
+
+    #Individual earning bonus the (eb) per soul egg
+    #(1.05 + 0.01 * amount of epic research (prophecybonus)) ** total prophecy eggs * (10 + amount of epic research (soul egg bonus))
     indi_eb = (1.05 + 0.01 * prophecy_bonus) ** new_proph * (10 + soul_bonus)
     total_eb = indi_eb * periodicals_response.backup.game.soul_eggs_d
 
@@ -74,6 +87,7 @@ def calc_earning_bonus(periodicals_response):
 
 
 
+### Create initial database table aswell as alternations / updates to main table
 def create_table(db):
     
     cur = db.cursor()
