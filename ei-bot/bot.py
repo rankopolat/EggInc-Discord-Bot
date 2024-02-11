@@ -1,3 +1,10 @@
+#==================================================================#
+############### Bot Created By: Taijitu (rankopolat) ###############
+### Repository: https://github.com/rankopolat/EggInc-Discord-Bot ###
+#==================================================================#
+#reference: https://github.com/derekantrican/EggIncAPI for protobuff
+#==================================================================#
+
 #discord imports
 import os
 import discord
@@ -17,13 +24,13 @@ import requests
 import ei_pb2
 import base64
 
-
+##===============================================================================================##
 
 # Load env file gathering Discord Bot Token
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-
+##===============================================================================================##
 
 #Create egg inc main command bot
 bot = commands.Bot(command_prefix='!', intents = discord.Intents.all())
@@ -45,7 +52,7 @@ async def on_ready():
         print(e)
 
 
-
+##===============================================================================================##
 
 
 ### /Join command entering EID# to register into the DB
@@ -83,8 +90,10 @@ async def join(interaction: discord.Interaction, eid: str):
             return
         
 
+        ## Sending to method in ei_funct
         total_eb = ef.calc_earning_bonus(periodicals_response)
 
+        ##Insert new users information using sqllite command
         cur = db.cursor()    
         cur.execute('''
             INSERT INTO kappaINFO (eid, username,soul_eggs,proph_eggs,earning_bonus) 
@@ -96,7 +105,7 @@ async def join(interaction: discord.Interaction, eid: str):
         await interaction.response.send_message(f"The user {interaction.user.name} has joined successfully.")
 
 
-
+##===============================================================================================##
 
 
 ### Command to display your current informational statistics
@@ -129,7 +138,7 @@ async def info(interaction: discord.Interaction):
         await interaction.response.send_message(f"The user {interaction.user.name} has not yet joined to be able to use this command.")
 
 
-
+##===============================================================================================##
 
 
 ## Command to update your currently stored data to new data
@@ -165,7 +174,8 @@ async def update(interaction: discord.Interaction):
         embed.add_field(name=ef.new, value= new_info, inline=False)
         
         ##Update database with newly generated values
-        db.execute("UPDATE kappaINFO SET soul_eggs=?, proph_eggs=?, earning_bonus=? WHERE username=?", (periodicals_response.backup.game.soul_eggs_d, periodicals_response.backup.game.eggs_of_prophecy, new_eb, interaction.user.name))
+        db.execute("UPDATE kappaINFO SET soul_eggs=?, proph_eggs=?, earning_bonus=? WHERE username=?", 
+                   (periodicals_response.backup.game.soul_eggs_d, periodicals_response.backup.game.eggs_of_prophecy, new_eb, interaction.user.name))
         db.commit()
 
         # ephemeral=True to hide
@@ -176,7 +186,7 @@ async def update(interaction: discord.Interaction):
         await interaction.response.send_message("Not currently registered in the database please register!")
     
 
-
+##===============================================================================================##
 
 
 ### Command to view other users stats (nothing private like eid)
@@ -210,7 +220,7 @@ async def spy(interaction: discord.Interaction, discord_user: str):
         await interaction.response.send_message(f"{discord_user} does this person even exist???.")
     
 
-
+##===============================================================================================##
 
 ## Command to Display leaderboard of current registered users Descending Order
 @bot.tree.command(name="lb")
@@ -235,6 +245,6 @@ async def leader_board(interaction: discord.Interaction):
     await interaction.response.send_message(embed=embed, ephemeral=False)
 
 
-
+## Run Bot activiting discord bot Token
 bot.run(TOKEN)
 
