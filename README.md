@@ -15,6 +15,8 @@ When you first invite the bot you need to join using
 This will register you into the sqllite database so you nolonger need to register again
 /info
 This command gives you a current info card on your statistics
+![image](https://github.com/rankopolat/EggInc-Discord-Bot/assets/116534934/f59b43c0-42e7-44f1-b1bc-914c953a2d25)
+
 /update
 This command will update your eb, soul eggs, and prophecy eggs 
 
