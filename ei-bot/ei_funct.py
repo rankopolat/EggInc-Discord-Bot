@@ -13,8 +13,8 @@ import base64
 global old,new,se,pe,eb
 old = ":regional_indicator_o: :regional_indicator_l: :regional_indicator_d:" 
 new = ":regional_indicator_n: :regional_indicator_e: :regional_indicator_w:"  
-se = ":purple_circle:"
-pe = ":yellow_circle:"
+se = "<:Egg_soul:1206562020342628392>"
+pe = "<:Egg_of_Prophecy:1206564103963807765>"
 eb = ":chart_with_upwards_trend:"
 
 
