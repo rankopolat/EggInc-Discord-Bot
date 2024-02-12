@@ -129,7 +129,7 @@ async def info(interaction: discord.Interaction):
         embed.add_field(name="Egg Inc IGN", value=periodicals_response.backup.user_name, inline=False)                                   
         embed.add_field(name="Soul Eggs", value=f"{total_soul}  {ef.se}", inline=False)
         embed.add_field(name="Prophecy Eggs", value=f"{row[4]}  {ef.pe}", inline=False)
-        embed.add_field(name="Earning Bonus", value=ef.numer_formatter(row[5]) + "%", inline=False)
+        embed.add_field(name="Earning Bonus", value=ef.numer_formatter(row[5]) + " %", inline=False)
 
         # ephemeral=True to hide
         await interaction.response.send_message(embed=embed, ephemeral=False)
@@ -166,12 +166,19 @@ async def update(interaction: discord.Interaction):
         embed.add_field(name="Egg Inc IGN", value=periodicals_response.backup.user_name, inline=False)  
 
         ##OLD INFO Embed              
-        old_info = f"{old_soul}  {ef.se} \u2003 {row[4]}  {ef.pe} \u2003 {ef.numer_formatter(row[5])} {ef.eb}"              
+        old_info = f"{old_soul}  {ef.se} \u2003 {row[4]}  {ef.pe} \u2003 {ef.numer_formatter(row[5])} %"              
         embed.add_field(name=ef.old, value= old_info, inline=False)
 
         ##NEW INFO Embed
-        new_info = f"{new_soul}  {ef.se} \u2003 {periodicals_response.backup.game.eggs_of_prophecy}  {ef.pe} \u2003 {new_eb_percent} {ef.eb}" 
+        new_info = f"{new_soul}  {ef.se} \u2003 {periodicals_response.backup.game.eggs_of_prophecy}  {ef.pe} \u2003 {new_eb_percent} %" 
         embed.add_field(name=ef.new, value= new_info, inline=False)
+
+        ### calculate difference
+        dif_eb = ef.numer_formatter(new_eb - row[5])
+        dif_soul = ef.numer_formatter(periodicals_response.backup.game.soul_eggs_d - row[3])
+        dif_info = f"{dif_soul}  {ef.se} \u2003 {periodicals_response.backup.game.eggs_of_prophecy - row[4]}  {ef.pe} \u2003 {dif_eb} %" 
+        embed.add_field(name=ef.eb, value= dif_info, inline=False)
+    
         
         ##Update database with newly generated values
         db.execute("UPDATE kappaINFO SET soul_eggs=?, proph_eggs=?, earning_bonus=? WHERE username=?", 
@@ -209,9 +216,9 @@ async def spy(interaction: discord.Interaction, discord_user: str):
         embed = Embed(title="Egg Inc Profile",description="A amazingly amazing description of your current egg inc", color=0xffd700)  
         embed.add_field(name="Discord User", value=discord_user, inline=False)
         embed.add_field(name="Egg Inc IGN", value=periodicals_response.backup.user_name, inline=False)                                   
-        embed.add_field(name="Soul Eggs", value=total_soul, inline=False)
-        embed.add_field(name="Prophecy Eggs", value=row[4], inline=False)
-        embed.add_field(name="Earning Bonus", value=ef.numer_formatter(row[5]) + "%", inline=False)
+        embed.add_field(name="Soul Eggs", value=f"{total_soul}  {ef.se}", inline=False)
+        embed.add_field(name="Prophecy Eggs", value=f"{row[4]}  {ef.pe}", inline=False)
+        embed.add_field(name="Earning Bonus", value=ef.numer_formatter(row[5]) + " %", inline=False)
 
         # ephemeral=True to hide
         await interaction.response.send_message(embed=embed, ephemeral=False)
@@ -239,7 +246,7 @@ async def leader_board(interaction: discord.Interaction):
         ## Adding each player to list Descending Order
         embed.add_field(name="", value=idx+1,inline=True)                                 
         embed.add_field(name="", value=user[6],inline=True)  
-        embed.add_field(name="", value=ef.numer_formatter(user[5]) + "%",inline=True)
+        embed.add_field(name="", value=ef.numer_formatter(user[5]) + " %",inline=True)
 
 
     await interaction.response.send_message(embed=embed, ephemeral=False)
