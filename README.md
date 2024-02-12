@@ -11,15 +11,24 @@ and than run python bot.py (you may need to pip install a couple things like pro
 
 ## Commands
 When you first invite the bot you need to join using
+
 /join eid#
 This will register you into the sqllite database so you nolonger need to register again
+
+![image](https://github.com/rankopolat/EggInc-Discord-Bot/assets/116534934/1d3942ee-ddd7-414b-9329-75a27c805e9f)
+
+
 /info
 This command gives you a current info card on your statistics
-<img src="https://raw.githubusercontent.com/rankopolat/EggInc-Discord-Bot/main/assets/116534934/f59b43c0-42e7-44f1-b1bc-914c953a2d25" alt="Image" style="float:left; margin-right:10px;" />
+
+![image](https://github.com/rankopolat/EggInc-Discord-Bot/assets/116534934/6127eba5-5fe6-41c7-9ca2-7e3479792754)
 
 
 /update
 This command will update your eb, soul eggs, and prophecy eggs 
+
+![image](https://github.com/rankopolat/EggInc-Discord-Bot/assets/116534934/811e7079-19c4-46a5-880d-e896282cfae6)
+
 
 More to Come!
 
