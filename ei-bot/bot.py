@@ -127,8 +127,8 @@ async def info(interaction: discord.Interaction):
         embed = Embed(title="Egg Inc Profile",description="A amazingly amazing description of your current egg inc", color=0xffd700)  
         embed.add_field(name="Discord User", value=interaction.user.name, inline=False)
         embed.add_field(name="Egg Inc IGN", value=periodicals_response.backup.user_name, inline=False)                                   
-        embed.add_field(name="Soul Eggs", value=total_soul, inline=False)
-        embed.add_field(name="Prophecy Eggs", value=row[4], inline=False)
+        embed.add_field(name="Soul Eggs", value=f"{total_soul}  {ef.se}", inline=False)
+        embed.add_field(name="Prophecy Eggs", value=f"{row[4]}  {ef.pe}", inline=False)
         embed.add_field(name="Earning Bonus", value=ef.numer_formatter(row[5]) + "%", inline=False)
 
         # ephemeral=True to hide
