@@ -21,13 +21,14 @@ This will register you into the sqllite database so you nolonger need to registe
 /info
 This command gives you a current info card on your statistics
 
-![image](https://github.com/rankopolat/EggInc-Discord-Bot/assets/116534934/6127eba5-5fe6-41c7-9ca2-7e3479792754)
+![image](https://github.com/rankopolat/EggInc-Discord-Bot/assets/116534934/3dc586fe-fb7c-4f21-a1da-9d00d521b961)
 
 
 /update
 This command will update your eb, soul eggs, and prophecy eggs 
 
-![image](https://github.com/rankopolat/EggInc-Discord-Bot/assets/116534934/811e7079-19c4-46a5-880d-e896282cfae6)
+![image](https://github.com/rankopolat/EggInc-Discord-Bot/assets/116534934/16ecd12a-f84a-4d6a-985e-624b70d59445)
+
 
 
 More to Come!
