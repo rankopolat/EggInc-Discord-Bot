@@ -36,7 +36,7 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 bot = commands.Bot(command_prefix='!', intents = discord.Intents.all())
 
 # Connect To the sqlite Database
-db = sqlite3.connect('ei-bot/ei-db/kappa.db')
+db = sqlite3.connect('ei-db/kappa.db')
 #Create db Table if not exists
 ef.create_table(db)
 
@@ -129,7 +129,7 @@ async def info(interaction: discord.Interaction):
         embed.add_field(name="Egg Inc IGN", value=periodicals_response.backup.user_name, inline=False)                                   
         embed.add_field(name="Soul Eggs", value=f"{total_soul}  {ef.se}", inline=False)
         embed.add_field(name="Prophecy Eggs", value=f"{row[4]}  {ef.pe}", inline=False)
-        embed.add_field(name="Earning Bonus", value=ef.numer_formatter(row[5]) + " %", inline=False)
+        embed.add_field(name="Earning Bonus", value=ef.numer_formatter(row[5]) + " <:percent:1206808522201767986>", inline=False)
 
         # ephemeral=True to hide
         await interaction.response.send_message(embed=embed, ephemeral=False)
@@ -166,17 +166,17 @@ async def update(interaction: discord.Interaction):
         embed.add_field(name="Egg Inc IGN", value=periodicals_response.backup.user_name, inline=False)  
 
         ##OLD INFO Embed              
-        old_info = f"{old_soul}  {ef.se} \u2003 {row[4]}  {ef.pe} \u2003 {ef.numer_formatter(row[5])} %"              
+        old_info = f"{old_soul}  {ef.se} \u2003 {row[4]}  {ef.pe} \u2003 {ef.numer_formatter(row[5])} <:percent:1206808522201767986>"              
         embed.add_field(name=ef.old, value= old_info, inline=False)
 
         ##NEW INFO Embed
-        new_info = f"{new_soul}  {ef.se} \u2003 {periodicals_response.backup.game.eggs_of_prophecy}  {ef.pe} \u2003 {new_eb_percent} %" 
+        new_info = f"{new_soul}  {ef.se} \u2003 {periodicals_response.backup.game.eggs_of_prophecy}  {ef.pe} \u2003 {new_eb_percent} <:percent:1206808522201767986>" 
         embed.add_field(name=ef.new, value= new_info, inline=False)
 
         ### calculate difference
         dif_eb = ef.numer_formatter(new_eb - row[5])
         dif_soul = ef.numer_formatter(periodicals_response.backup.game.soul_eggs_d - row[3])
-        dif_info = f"{dif_soul}  {ef.se} \u2003 {periodicals_response.backup.game.eggs_of_prophecy - row[4]}  {ef.pe} \u2003 {dif_eb} %" 
+        dif_info = f"{dif_soul}  {ef.se} \u2003 {periodicals_response.backup.game.eggs_of_prophecy - row[4]}  {ef.pe} \u2003 {dif_eb} <:percent:1206808522201767986>" 
         embed.add_field(name=ef.eb, value= dif_info, inline=False)
     
         
@@ -218,7 +218,7 @@ async def spy(interaction: discord.Interaction, discord_user: str):
         embed.add_field(name="Egg Inc IGN", value=periodicals_response.backup.user_name, inline=False)                                   
         embed.add_field(name="Soul Eggs", value=f"{total_soul}  {ef.se}", inline=False)
         embed.add_field(name="Prophecy Eggs", value=f"{row[4]}  {ef.pe}", inline=False)
-        embed.add_field(name="Earning Bonus", value=ef.numer_formatter(row[5]) + " %", inline=False)
+        embed.add_field(name="Earning Bonus", value=ef.numer_formatter(row[5]) + " <:percent:1206808522201767986>", inline=False)
 
         # ephemeral=True to hide
         await interaction.response.send_message(embed=embed, ephemeral=False)
@@ -246,7 +246,7 @@ async def leader_board(interaction: discord.Interaction):
         ## Adding each player to list Descending Order
         embed.add_field(name="", value=idx+1,inline=True)                                 
         embed.add_field(name="", value=user[6],inline=True)  
-        embed.add_field(name="", value=ef.numer_formatter(user[5]) + " %",inline=True)
+        embed.add_field(name="", value=ef.numer_formatter(user[5]) + " <:percent:1206808522201767986>",inline=True)
 
 
     await interaction.response.send_message(embed=embed, ephemeral=False)
