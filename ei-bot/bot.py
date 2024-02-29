@@ -124,7 +124,7 @@ async def info(interaction: discord.Interaction):
         total_soul = ef.numer_formatter(row[3])
 
         ## Embed discord text bubble
-        embed = Embed(title="Egg Inc Profile",description="A amazingly amazing description of your current egg inc", color=0xffd700)  
+        embed = Embed(title="Egg Inc Profile",description="-----------", color=0xffd700)  
         embed.add_field(name="Discord User", value=interaction.user.name, inline=False)
         embed.add_field(name="Egg Inc IGN", value=periodicals_response.backup.user_name, inline=False)                                   
         embed.add_field(name="Soul Eggs", value=f"{total_soul}  {ef.se}", inline=False)
@@ -161,7 +161,7 @@ async def update(interaction: discord.Interaction):
         new_soul = ef.numer_formatter(periodicals_response.backup.game.soul_eggs_d)
 
         ## Embed discord text bubble
-        embed = Embed(title="Egg Inc Profile",description="A amazingly amazing update of your current egg inc", color=0xffd700)  
+        embed = Embed(title="Egg Inc Profile",description="-----------", color=0xffd700)  
         embed.add_field(name="Discord User", value=interaction.user.name, inline=False)
         embed.add_field(name="Egg Inc IGN", value=periodicals_response.backup.user_name, inline=False)  
 
@@ -213,7 +213,7 @@ async def spy(interaction: discord.Interaction, discord_user: str):
         total_soul = ef.numer_formatter(row[3])
 
         ## Embed discord text bubble
-        embed = Embed(title="Egg Inc Profile",description="A amazingly amazing description of your current egg inc", color=0xffd700)  
+        embed = Embed(title="Egg Inc Profile",description="-----------", color=0xffd700)  
         embed.add_field(name="Discord User", value=discord_user, inline=False)
         embed.add_field(name="Egg Inc IGN", value=periodicals_response.backup.user_name, inline=False)                                   
         embed.add_field(name="Soul Eggs", value=f"{total_soul}  {ef.se}", inline=False)
@@ -236,7 +236,7 @@ async def leader_board(interaction: discord.Interaction):
     row =  list.fetchall()
 
     ## Header Points of Embed
-    embed = Embed(title="Kappa Leaderboard",description="The board yes thats right THE BOARD", color=0xffd700)  
+    embed = Embed(title="Kappa Leaderboard",description="-----------", color=0xffd700)  
     embed.add_field(name="Rank", value="",inline=True)                                 
     embed.add_field(name="Egg Inc IGN", value="",inline=True)  
     embed.add_field(name="Earning Bonus", value="",inline=True)
