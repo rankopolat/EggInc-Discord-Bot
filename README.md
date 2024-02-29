@@ -30,6 +30,19 @@ This command will update your eb, soul eggs, and prophecy eggs
 ![image](https://github.com/rankopolat/EggInc-Discord-Bot/assets/116534934/16ecd12a-f84a-4d6a-985e-624b70d59445)
 
 
+/spy
+This Command allows you to check other users statistics based from there discord username
+
+![image](https://github.com/rankopolat/EggInc-Discord-Bot/assets/116534934/b497b093-c5ef-480b-bb60-6a3d15f08861)
+
+![image](https://github.com/rankopolat/EggInc-Discord-Bot/assets/116534934/f5e46653-9377-4f1a-b8f1-64ea1dadf033)
+
+
+/lb
+This Command creates a leaderboard of the users stored in the db based on eb% in descending order
+
+![image](https://github.com/rankopolat/EggInc-Discord-Bot/assets/116534934/86198bdb-1da0-4cf2-b672-4ddbbcdfd2fd)
+
 
 More to Come!
 
