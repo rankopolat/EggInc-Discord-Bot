@@ -1,7 +1,7 @@
 # EggInc Discord Bot
 
 This is a Discord Bot to monitor you and your friends Soul Eggs, Prophecy Eggs, earning bonus, leaderboard, contracts and all egg inc api related material
-This is a query to the Egg Inc API made by refering the code https://github.com/derekantrican/EggIncAPI to get the protobuf and endpoints
+This is a query to the Egg Inc API made by refering the code https://github.com/derekantrican/EggIncAPI to get the protobuf and endpoints.
 
 ## Usage
 To Use this Discord bot simply Clone the repo, cd to the python folder,
@@ -41,8 +41,5 @@ This Command allows you to check other users statistics based from there discord
 This Command creates a leaderboard of the users stored in the db based on eb% in descending order
 
 ![image](https://github.com/rankopolat/EggInc-Discord-Bot/assets/116534934/ce0ef319-2b35-42ef-af92-51f8d8d095a6)
-
-
-More to Come!
 
 
