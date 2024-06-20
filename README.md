@@ -7,7 +7,7 @@ This is a query to the Egg Inc API made by refering the code https://github.com/
 To Use this Discord bot simply Clone the repo, cd to the python folder,
 create a .ev file and add your discord token in the format DISCORD_TOKEN = ''
 invite the bot to your server
-and than run python bot.py (you may need to pip install a couple things like protobuf unless you already have it). 
+and than run python bot.py. 
 
 ## Commands
 When you first invite the bot you need to join using
